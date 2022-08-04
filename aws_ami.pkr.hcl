@@ -1,6 +1,6 @@
 variable "ami_id" {
   type    = string
-  default = "ami-08df646e18b182346"
+  default = " " 
 }
 
 variable "app_name" {
@@ -16,8 +16,8 @@ source "amazon-ebs" "httpd" {
   ami_name      = "PACKER-DEMO-${local.app_name}"
   instance_type = "t2.micro"
   region        = "ap-south-1"
-  access_key = "AKIATDVBJ3OSZFW4WLUQ"
-  secret_key = "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"
+  access_key = " "
+  secret_key = " "
   source_ami    = "${var.ami_id}"
   ssh_username  = "ec2-user"
   tags = {

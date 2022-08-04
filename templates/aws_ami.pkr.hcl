@@ -1,21 +1,26 @@
 variable "ami_id" {
   type    = string
-  default = " " 
+  default = "" 
 }
 
 variable "app_name" {
   type    = string
-  default = "httpd"
+  default = ""
 }
 
 locals {
     app_name = "httpd"
 }
 
+variable "instance_type" {
+  type    = string
+  default = "t2.micro"
+}
+
 source "amazon-ebs" "httpd" {
   ami_name      = "PACKER-DEMO-${local.app_name}"
-  instance_type = "t2.micro"
-  region        = "ap-south-1"
+  instance_type = "${var.instance_type}"
+  region        = "${var.region}"
   access_key = " "
   secret_key = " "
   source_ami    = "${var.ami_id}"
@@ -28,7 +33,7 @@ source "amazon-ebs" "httpd" {
 
 build {
   sources = ["source.amazon-ebs.httpd"]
-
+  /*
   provisioner "shell" {
     script = "script/script.sh"
   }
@@ -36,4 +41,5 @@ build {
   post-processor "shell-local" {
     inline = ["echo foo"]
   }
+  */ 
 }

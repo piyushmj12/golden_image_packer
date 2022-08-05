@@ -33,11 +33,11 @@ source "amazon-ebs" "httpd" {
 
 build {
   sources = ["source.amazon-ebs.httpd"]
-  /*
-  provisioner "shell" {
-    script = "script/script.sh"
+ 
+ provisioner "shell" {
+    script = "scripts/script.sh"
   }
-
+  /*
   post-processor "shell-local" {
     inline = ["echo foo"]
   }

@@ -1,12 +1,22 @@
 # Declare Your variables here
 
 locals {
-    app_name = "httpd"
+  app_name = "httpd"
+}
+
+variable "ami_regions" {
+  type    = string
+  default = "us-east-1"
+}
+
+variable "region" {
+  type    = string
+  default = "us-east-1"
 }
 
 variable "source_ami" {
   type    = string
-  default = "ami-009eff42742f9ba11" 
+  default = "ami-090fa75af13c156b4"
 }
 
 variable "app_name" {
@@ -26,9 +36,9 @@ variable "script_install_java" {
 }
 
 //*****************************************
-variable "script_install_nginx_ubuntu" {
+variable "script_install_nginx_linux" {
   type    = string
-  default = "install_nginx_ubuntu.sh"
+  default = "install_nginx_linux.sh"
 }
 
 //*****************************************

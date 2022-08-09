@@ -2,33 +2,40 @@ source "amazon-ebs" "httpd" {
   ami_name      = "${local.app_name}"
   instance_type = "${var.instance_type}"
   region        = "${var.region}"
-  source_ami    = "${var.ami_id}"
+  //ami_regions   =  ["${var.ami_regions}"]
+  source_ami = "${var.source_ami}"
+
   source_ami_filter {
     filters = {
-      name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
+      //name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
+      name                = "amzn2-ami-kernel-5.10-hvm-2.0.20220719.0-x86_64-gp2"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["099720109477"]
+    owners      = ["422578292388"]
   }
-  ssh_username  = "ec2-user"
+  ssh_username = "ec2-user"
   tags = {
     Env  = "DEMO"
-    Name = "PACKER-DEMO-${var.app_name}"
+    Name = "${var.app_name}"
   }
 }
 
 build {
   sources = ["source.amazon-ebs.httpd"]
-  
-  provisioner "shell" {
-    script = "scripts/${var.script_install_nginx_ubuntu}"
+
+  provisioner "shell-local" {
+    inline = ["scripts/${var.script_install_nginx_linux}"]
   }
-  
+
+  # provisioner "shell-local" {
+  #   script = "scripts/${var.script_install_nginx_linux}"
+  # }
+
   /*
   post-processor "shell-local" {
     inline = ["echo foo"]
   }
-  */ 
+  */
 }

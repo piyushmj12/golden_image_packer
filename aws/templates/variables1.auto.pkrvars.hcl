@@ -1,10 +1,9 @@
-app_name = "httpd"
-region = "ap-south-1"
+ami_name      = "httpd"
+region        = "us-east-1"
 instance_type = "t2.micro"
-ami_regions = "ap-south-1"
-source_ami = "ami-009eff42742f9ba11"
+ami_regions   = "us-east-1"
+source_ami    = "ami-090fa75af13c156b4"
 //-----
-script_install_java = "install_java.sh"
-script_install_python = "install_python.sh"
-script_install_nginx_ubuntu = "install_nginx_ubuntu.sh"
-script_install_docker = "install_docker.sh"
+
+provisioner_scripts = "install_nginx_linux.sh"
+

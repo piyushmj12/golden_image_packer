@@ -1,7 +1,7 @@
 # Declare Your variables here
 
 variable "ami_name" {
-  type = string
+  type    = string
   default = "httpd"
 }
 
@@ -20,11 +20,25 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+
+
+
+
+# variable "script_install_nginx_linux" {
+#   type    = string
+#   default = "install_nginx_linux.sh"
+# }
+
+# variable "script_install_docker" {
+#   type    = string
+#   default = "install_docker.sh"
+# }
+
 //*****************************************
 
 variable "provisioner_scripts" {
-  type    = string
-  default = "install_nginx_linux.sh"
+  type    = list(string)
+  default = ["../../scripts/install_nginx_linux.sh","../../scripts/install_git.sh"]
 }
 
 //*****************************************

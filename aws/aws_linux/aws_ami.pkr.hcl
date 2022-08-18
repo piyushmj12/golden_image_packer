@@ -10,8 +10,6 @@ source "amazon-ebs" "httpd" {
   #   # filters = {
   #   #   //name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
   #   #   //name                = "amzn2-ami-kernel-5.10-hvm-2.0.20220719.0-x86_64-gp2"
-  #   #   //name                = "amzn2-ami-kernel-5.10-hvm-2.0.20220719.0-x86_64-*"
-  #   #   name                = "amzn2-ami-kernel-5.10-hvm-*"
   #   #   root-device-type    = "ebs"
   #   #   virtualization-type = "hvm"
 

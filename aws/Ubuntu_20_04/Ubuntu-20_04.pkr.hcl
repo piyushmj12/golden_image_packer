@@ -16,7 +16,7 @@ source "amazon-ebs" "ubuntu_20_04" {
   ami_name      = var.ami_name
   instance_type = var.instance_type
   region        = var.region
-  source_ami   = data.amazon-ami.oracle_7_9.id
+  source_ami   = data.amazon-ami.ubuntu_20_04.id
 
   
   ssh_username = "ec2-user"

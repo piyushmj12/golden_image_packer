@@ -9,5 +9,3 @@ source_ami    = "ami-090fa75af13c156b4"
 provisioner_scripts        = ["../../scripts/install_nginx_linux.sh","../../scripts/install_git.sh"]
 
 
-
-

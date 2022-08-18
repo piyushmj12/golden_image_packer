@@ -1,3 +1,4 @@
+data "aws_caller_identity" "current" {}
 source "amazon-ebs" "ubuntu_20_04" {
   ami_name      = var.ami_name
   instance_type = var.instance_type

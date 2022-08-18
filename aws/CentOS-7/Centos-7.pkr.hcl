@@ -1,4 +1,4 @@
-data "aws_caller_identity" "current" {}
+# data "aws_caller_identity" "current" {}
 source "amazon-ebs" "centos_7" {
   ami_name      = var.ami_name
   instance_type = var.instance_type
@@ -15,7 +15,7 @@ source "amazon-ebs" "centos_7" {
 
       }
       most_recent = true
-      owners      = [data.aws_caller_identity.current.account_id] 
+     # owners      = [data.aws_caller_identity.current.account_id] 
       region      = var.region
      }
   ssh_username = "ec2-user"

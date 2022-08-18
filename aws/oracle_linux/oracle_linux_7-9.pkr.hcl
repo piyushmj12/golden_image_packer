@@ -1,3 +1,4 @@
+data "aws_caller_identity" "current" {}
 source "amazon-ebs" "oracle_7_9" {
   ami_name      = var.ami_name
   instance_type = var.instance_type

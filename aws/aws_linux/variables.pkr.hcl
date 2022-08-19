@@ -38,7 +38,7 @@ variable "instance_type" {
 
 variable "provisioner_scripts" {
   type    = list(string)
-  default = ["../../scripts/install_nginx_linux.sh","../../scripts/install_git.sh"]
+  default = ["../../scripts/aws_linux/install_nginx_linux.sh","../../scripts/aws_linux/install_git.sh"]
 }
 
 //*****************************************

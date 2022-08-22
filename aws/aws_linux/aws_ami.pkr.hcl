@@ -4,6 +4,7 @@ source "amazon-ebs" "httpd" {
   ami_name      = var.ami_name
   instance_type = var.instance_type
   region        = var.region
+  ami_regions   = var.ami_regions
   source_ami = var.source_ami
 
   # source_ami_filter {

@@ -12,7 +12,7 @@ variable "region" {
 
 variable "source_ami" {
   type    = string
-  default = "ami-090fa75af13c156b4"
+  default = "ami-08d4ac5b634553e16" //Ubuntu Server 20.04 LTS
 }
 
 variable "instance_type" {
@@ -22,5 +22,6 @@ variable "instance_type" {
 
 variable "provisioner_scripts" {
   type    = list(string)
-  default = ["../../scripts/install_nginx_linux.sh","../../scripts/install_git.sh"]
+  default = ["../../scripts/ubuntu_scripts/install_git_ubuntu.sh", 
+            "../../scripts/ubuntu_scripts/install_nginx_ubuntu.sh"]
 }

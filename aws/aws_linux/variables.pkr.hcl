@@ -10,6 +10,11 @@ variable "region" {
   default = "us-east-1"
 }
 
+variable "ami_regions" {
+  type = list(string)
+  default = []
+}
+
 variable "source_ami" {
   type    = string
   default = "ami-090fa75af13c156b4"

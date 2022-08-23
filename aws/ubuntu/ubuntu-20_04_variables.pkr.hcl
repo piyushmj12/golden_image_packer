@@ -1,6 +1,31 @@
 # Declare Your variables here
 
+variable "name" {
+  type = string
+  default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
+}
+variable "state" {
+  type = string
+  default = "available"
+}
+variable "root-device-type" {
+  type = string
+  default = "ebs"
+}
+variable "virtualization-type" {
+  type = string
+  default = "hvm"
+}
+variable "architecture" {
+  type = string
+  default = "x86_64"
+}
 
+variable "owner" {
+  type = string
+  default = "422578292388"
+}
+//**************************************************************/
 variable "ami_name" {
   type    = string
   default = "httpd"
@@ -27,5 +52,6 @@ variable "instance_type" {
 
 variable "provisioner_scripts" {
   type = list(string)
-  default = ["../../scripts/ubuntu/install_git_ubuntu.sh"]
+  default = ["../../scripts/ubuntu/install_git_ubuntu.sh",
+  "../../scripts/ubuntu/install_nginx_ubuntu.sh"]
 }

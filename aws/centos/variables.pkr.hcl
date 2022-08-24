@@ -15,7 +15,7 @@ variable "ami_regions" {
 
 variable "source_ami" {
   type    = string
-  default = "ami-0c593270db276ac8b"
+  default = "ami-04745ee7d4c0fb5fd"
 }
 
 variable "instance_type" {

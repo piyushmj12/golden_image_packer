@@ -25,6 +25,10 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "owner" {
+  type = string
+  default = "422578292388"
+}
 
 
 

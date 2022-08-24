@@ -1,2 +1,3 @@
-vi /etc/yum.repos.d/nginx.repo
-sudo yum install nginx
+# put some script here
+#!/bin/bash
+sudo yum install nginx -y

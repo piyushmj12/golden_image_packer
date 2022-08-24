@@ -23,7 +23,10 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-
+variable "provisioner_scripts" {
+  type    = list(string)
+  default = ["../../scripts/centos/install_nginx_centos.sh","../../scripts/centos/install_git_centos.sh"]
+}
 
 
 
@@ -39,10 +42,7 @@ variable "instance_type" {
 
 //*****************************************
 
-variable "provisioner_scripts" {
-  type    = list(string)
-  default = ["install_python.sh"]
-}
+
 
 
 

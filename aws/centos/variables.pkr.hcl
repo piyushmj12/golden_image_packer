@@ -28,7 +28,10 @@ variable "provisioner_scripts" {
   default = ["../../scripts/centos/install_nginx_centos.sh","../../scripts/centos/install_git_centos.sh"]
 }
 
-
+variable "owner" {
+  type = string
+  default = "422578292388"
+}
 
 # variable "script_install_nginx_linux" {
 #   type    = string
